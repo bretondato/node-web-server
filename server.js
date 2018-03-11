@@ -33,7 +33,7 @@ hbs.registerHelper('screamIt', function (text) {
 
 app.get('/', function (req, res) {
     res.render('home.hbs', {
-        pageTitle: 'About Page',
+        pageTitle: 'Home page',
         welcomeMessage:'Ola Bem Vindo ao Bretondato Site'
     });
 });
@@ -48,6 +48,13 @@ app.get('/bad', function (req, res) {
     res.send({
         errorMessage:"Unable to handle request"
     });
+});
+
+app.get('/projects', function (req, res) {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects Page',
+        welcomeMessage: 'You are at Projects Page'
+    })
 });
 
 app.listen(3000, function () {
